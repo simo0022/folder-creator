@@ -1,0 +1,30 @@
+@echo off
+setlocal enabledelayedexpansion
+
+rem Directory containing the files
+set "directory=C:\Users\userfiles"
+
+rem Change directory to the specified one
+cd /d "%directory%"
+
+rem Iterate over each file in the directory
+for %%F in (*) do (
+    rem Check if the item is a file
+    if exist "%%F" (
+        rem Extract the filename without extension
+        set "folder_name=%%~nF"
+        rem Create a folder with the same name as the file
+        mkdir "!folder_name!"
+        rem Check if folder creation was successful
+        if exist "!folder_name!" (
+            echo Folder "!folder_name!" created successfully.
+            rem Move the file into the created folder
+            move "%%F" "!folder_name!"
+            echo File "%%F" moved to folder "!folder_name!".
+        ) else (
+            echo Failed to create folder "!folder_name!".
+        )
+    )
+)
+
+echo Folder creation and file movement completed.
