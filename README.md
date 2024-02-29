@@ -1,0 +1,1 @@
+Replace C:\path\to\your\directory with the actual path to the directory where your files are located. This script will create folders with the same names as the files present in that directory. If a folder with the same name already exists, it will print a message indicating that it failed to create the folder.
