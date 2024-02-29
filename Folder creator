@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 rem Directory containing the files
-set "directory=C:\Users\userfiles"
+set "directory=C:\path\to\your\directory"
 
 rem Change directory to the specified one
 cd /d "%directory%"
